@@ -56,31 +56,31 @@ public class Conditions {
 
         // switch 12 / 13
         code = 123;
-        switch (code) {
-            case 111, 222, 333 -> System.out.println("Малый приз");
-            case 444, 555 -> System.out.println("Средний приз");
-            case 777 -> System.out.println("Крупный приз");
-            default -> System.out.println("Попробуйте еще раз");
-        }
+//        switch (code) {
+//            case 111, 222, 333 -> System.out.println("Малый приз");
+//            case 444, 555 -> System.out.println("Средний приз");
+//            case 777 -> System.out.println("Крупный приз");
+//            default -> System.out.println("Попробуйте еще раз");
+//        }
 
         code = 333;
-        String prize = switch (code) {
-            case 111, 222, 333 -> "Малый приз";
-//            case 444, 555 -> "Средний приз";
-//            case 777 -> "Крупный приз";
-            default -> "Попробуйте еще раз";
-        };
-
-        prize = switch (code) {
-            case 111, 222, 333 -> "Малый приз";
-//            case 444, 555 -> "Средний приз";
-//            case 777 -> "Крупный приз";
-            default -> {
-                String someRes = "Попробуйте еще раз";
-                yield someRes; // J13
-//                break someRes; // J12
-            }
-        };
-        System.out.println(prize);
+//        String prize = switch (code) {
+//            case 111, 222, 333 -> "Малый приз";
+////            case 444, 555 -> "Средний приз";
+////            case 777 -> "Крупный приз";
+//            default -> "Попробуйте еще раз";
+//        };
+//
+//        prize = switch (code) {
+//            case 111, 222, 333 -> "Малый приз";
+////            case 444, 555 -> "Средний приз";
+////            case 777 -> "Крупный приз";
+//            default -> {
+//                String someRes = "Попробуйте еще раз";
+//                yield someRes; // J13
+////                break someRes; // J12
+//            }
+//        };
+//        System.out.println(prize);
     }
 }
