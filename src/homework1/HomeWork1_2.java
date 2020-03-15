@@ -7,8 +7,8 @@ public class HomeWork1_2 {
         int sum = 7;
         m = 0;
         n = 0;
-        for (int i = 0; i < someArr.length; i ++) {
-            for (int j = 0; j < someArr.length; j ++) {
+        for (int i = 0; i < someArr.length - 1; i ++) {
+            for (int j = i + 1; j < someArr.length; j ++) {
                 if (i != j) {
                     if (sum == someArr[i] + someArr[j]) {
                         m = someArr[i];
