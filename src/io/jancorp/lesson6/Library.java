@@ -27,6 +27,25 @@ public class Library {
     public void addBook(Book ...newBooks)   {   // три точки - переменное кол-во аргументов
         //newBooks - это массив
         //TODO реализация метода
+        int count = 0;
+        for (Book b:books) {
+            if (b == null)  {
+                count++;
+            }
+        }
+        if (count < newBooks.length)    {
+            return;
+        }   else    {
+            for (int i = 0; i < newBooks.length; i++) {
+                for (int j = 0; j < books.length; j++) {
+                    if (books[j] == null) {
+                        books[j].setInLibrary(true);
+                        books[j] = newBooks[i];
+                        break;  //return - выход из метода
+                    }
+                }
+            }
+        }
     }
 
     public Book getHome(String title)   {
