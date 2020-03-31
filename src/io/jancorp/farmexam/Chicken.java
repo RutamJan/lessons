@@ -1,6 +1,6 @@
 package io.jancorp.farmexam;
 
-public class Chicken extends FarmAnimal implements CanGive{
+public class Chicken extends FarmAnimal implements CanGive, CanBeEaten{
     public Chicken(String name, int weight, int speed, int health, int resource) {
         super(name = "Chicken", weight, speed, health, resource);
     }

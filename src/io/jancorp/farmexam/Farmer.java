@@ -1,5 +1,7 @@
 package io.jancorp.farmexam;
 
+import io.jancorp.lesson8.animals.CanBeEaten;
+
 import java.util.Random;
 
 public class Farmer {
@@ -28,11 +30,25 @@ public class Farmer {
     }
 
     public void gather(FarmAnimal[] farmAnimals)    {
+        boolean canGather = false;
         for (int i = 0; i < farmAnimals.length; i ++)   {
-            if (farmAnimals[i] instanceof CanGive){
+            if (farmAnimals[i] instanceof CanGive && farmAnimals[i].isOnFarm == true){
                 capital += farmAnimals[i].resource;
+                canGather = true;
             }
         }
+        if (canGather = false)  {
+            for (int i = 0; i < farmAnimals.length; i++)    {
+                if (farmAnimals[i] instanceof CanBeEaten && farmAnimals[i].isOnFarm == true)  {
+
+                }
+            }
+        }
+    }
+
+    public void eat(FarmAnimal fa)  {
+        capital += fa.weight;
+        fa.isOnFarm = false;
     }
 
     public void shoo(WildAnimal wildAnimal)  {
@@ -41,6 +57,17 @@ public class Farmer {
         if (chance == 1)    {
             wildAnimal.shooCounter++;
         }
+    }
+
+    public void feed(FarmAnimal[] farmAnimals)  {
+       for (int i = 0; i < farmAnimals.length; i++) {
+           if (farmAnimals[i].isOnFarm() == true)   {
+               farmAnimals[i].setCurrhealth(farmAnimals[i].currhealth + 1);
+               if (farmAnimals[i].currhealth > farmAnimals[i].health)   {
+                   farmAnimals[i].setCurrhealth(farmAnimals[i].health);
+               }
+           }
+       }
     }
 
 
